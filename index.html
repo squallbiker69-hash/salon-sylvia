@@ -178,12 +178,12 @@
           <tr><td>Shampoing + Coupe + Brushing</td><td>30€</td></tr>
           <tr><td>Couleur + Shampoing + Brushing</td><td>38€</td></tr>
           <tr><td>Couleur + Shampoing + Coupe + Brushing</td><td>48€</td></tr>
-          <tr><td>Balayage / Mèches / Ombré + Shampoing + Brushing — court</td><td>50€</td></tr>
-          <tr><td>Balayage / Mèches / Ombré + Shampoing + Brushing — mi-long</td><td>60€</td></tr>
-          <tr><td>Balayage / Mèches / Ombré + Shampoing + Brushing — long</td><td>80€</td></tr>
+          <tr><td>Balayage / Mèches / Ombré — court</td><td>50€</td></tr>
+          <tr><td>Balayage / Mèches / Ombré — mi-long</td><td>60€</td></tr>
+          <tr><td>Balayage / Mèches / Ombré — long</td><td>80€</td></tr>
           <tr><td>Supplément cheveux épais</td><td>+5€ à +10€</td></tr>
-          <tr><td>Permanente + Shampoing + Coupe + Brushing</td><td>40€ à 60€</td></tr>
-          <tr><td>Patine</td><td>15€ <span style="color:var(--muted)">(supplément produit 5€ à 10€)</span></td></tr>
+          <tr><td>Permanente + Coupe + Brushing</td><td>40€ à 60€</td></tr>
+          <tr><td>Patine</td><td>15€ (supplément produit 5€ à 10€)</td></tr>
           <tr><td>Soin</td><td>3€</td></tr>
         </tbody>
       </table>
@@ -216,8 +216,6 @@
         <div><label for="name">Nom</label><input id="name" name="name" required /></div>
         <div><label for="email">Email</label><input id="email" name="email" type="email" required /></div>
         <div><label for="message">Message</label><textarea id="message" name="message" required></textarea></div>
-        <input type="hidden" name="_subject" value="Demande de rendez-vous - Salon Sylvia">
-        <input type="hidden" name="_redirect" value="https://squallbiker69-hash.github.io/salon-sylvia/merci.html">
         <button class="submit" type="submit">Envoyer</button>
       </form>
     </div>
@@ -227,7 +225,10 @@
   <a href="tel:+33660482253" class="call-button">📞 Appeler</a>
 
   <script>
+    // année dynamique
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Avis (simulation locale)
     const avisForm = document.getElementById('avisForm');
     const avisList = document.getElementById('avisList');
     avisForm.addEventListener('submit', (e) => {
@@ -240,6 +241,23 @@
       item.innerHTML = `<strong>${nom}</strong> — ${'★'.repeat(note)}${'☆'.repeat(5-note)}<br>${msg}`;
       avisList.prepend(item);
       avisForm.reset();
+    });
+
+    // Formulaire contact avec redirection vers merci.html
+    const form = document.getElementById("contactForm");
+    form.addEventListener("submit", async function(e) {
+      e.preventDefault();
+      const data = new FormData(form);
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (response.ok) {
+        window.location.href = "merci.html"; // redirection après succès
+      } else {
+        alert("Une erreur est survenue, veuillez réessayer.");
+      }
     });
   </script>
 </body>
