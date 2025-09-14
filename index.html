@@ -6,7 +6,7 @@
   <title>Salon Sylvia — Coiffure Moderne</title>
   <meta name="description" content="Salon Sylvia, coiffeur à Méounes-lès-Montrieux (Var). Coupes, colorations, mèches, brushing et soins capillaires pour femmes, hommes et enfants." />
 
-  <!-- Polices : Playfair (titres) + Poppins (texte) -->
+  <!-- Polices -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
@@ -35,10 +35,9 @@
     .cta { padding: 10px 16px; border-radius: 999px; font-weight: 600; background: var(--brand); color: #fff; box-shadow: var(--shadow); }
     .cta:hover { background: var(--brand-strong); }
 
-    /* Hero */
     .hero {
       padding: 96px 0 64px; text-align: center; color: #fff; position: relative;
-      background: url("https://squallbiker69-hash.github.io/salon-sylvia/images/salon.jpg") no-repeat center/cover;
+      background: url("images/salon.jpg") no-repeat center/cover;
     }
     .hero::after { content:""; position:absolute; inset:0; background: rgba(0,0,0,.45); }
     .hero > .container { position:relative; z-index:1; }
@@ -70,7 +69,6 @@
 
     footer { border-top: 1px solid #f3f4f6; padding: 28px 0; color: var(--muted); font-size: 14px; text-align: center; background: #fff; }
 
-    /* Bouton Appeler mobile */
     .call-button {
       position: fixed; bottom: 16px; right: 16px;
       background: var(--brand); color: #fff; padding: 14px 20px;
@@ -156,7 +154,47 @@
   <section class="features" id="tarifs">
     <div class="container">
       <h2>Tarifs</h2>
-      <!-- (Tarifs enfants, homme, femme à réintégrer comme avant) -->
+
+      <h3>Enfants</h3>
+      <table>
+        <tbody>
+          <tr><td>Garçon (−15 ans)</td><td>10€</td></tr>
+          <tr><td>Fille (−12 ans)</td><td>15€</td></tr>
+          <tr><td>Bébé (−5 ans)</td><td>8€</td></tr>
+        </tbody>
+      </table>
+
+      <h3 style="margin-top:18px">Homme</h3>
+      <table>
+        <tbody>
+          <tr><td>Shampoing + Coupe + Coiffage</td><td>16€</td></tr>
+        </tbody>
+      </table>
+
+      <h3 style="margin-top:18px">Femme</h3>
+      <table>
+        <tbody>
+          <tr><td>Shampoing + Brushing</td><td>20€</td></tr>
+          <tr><td>Shampoing + Coupe + Brushing</td><td>30€</td></tr>
+          <tr><td>Couleur + Shampoing + Brushing</td><td>38€</td></tr>
+          <tr><td>Couleur + Shampoing + Coupe + Brushing</td><td>48€</td></tr>
+          <tr><td>Balayage / Mèches / Ombré + Shampoing + Brushing — court</td><td>50€</td></tr>
+          <tr><td>Balayage / Mèches / Ombré + Shampoing + Brushing — mi-long</td><td>60€</td></tr>
+          <tr><td>Balayage / Mèches / Ombré + Shampoing + Brushing — long</td><td>80€</td></tr>
+          <tr><td>Supplément cheveux épais</td><td>+5€ à +10€</td></tr>
+          <tr><td>Permanente + Shampoing + Coupe + Brushing</td><td>40€ à 60€</td></tr>
+          <tr><td>Patine</td><td>15€ <span style="color:var(--muted)">(supplément produit 5€ à 10€)</span></td></tr>
+          <tr><td>Soin</td><td>3€</td></tr>
+        </tbody>
+      </table>
+
+      <p style="color:var(--muted); margin-top:12px;">
+        *Les prix peuvent varier selon la longueur et l’épaisseur des cheveux. Devis personnalisé sur demande.
+      </p>
+
+      <div style="margin-top:16px; text-align:center;">
+        <a class="cta" href="tel:+33660482253">📞 Réserver maintenant</a>
+      </div>
     </div>
   </section>
 
@@ -170,15 +208,17 @@
       <p><strong>WhatsApp :</strong> <a href="https://wa.me/33660482253" target="_blank">Discuter sur WhatsApp</a></p>
 
       <div class="map-container">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22114.86374517276!2d5.969837134765651!3d43.28750809999999!..." loading="lazy"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22114.86374517276!2d5.969837134765651!3d43.28750809999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12c9147d97be8f41%3A0xbca575ceb126c5f1!2s2996%20Planesselve%2C%2083136%20M%C3%A9ounes-l%C3%A8s-Montrieux!5e1!3m2!1sfr!2sfr!4v1757846797725!5m2!1sfr!2sfr"
+          width="100%" height="360" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
       </div>
 
-      <form id="contactForm" style="margin-top:18px;">
-        <div><label for="name">Nom</label><input id="name" required></div>
-        <div><label for="email">Email</label><input id="email" type="email" required></div>
-        <div><label for="message">Message</label><textarea id="message" required></textarea></div>
+      <form id="contactForm" action="https://formspree.io/f/mblaelrw" method="POST" style="margin-top:18px;">
+        <div><label for="name">Nom</label><input id="name" name="name" required /></div>
+        <div><label for="email">Email</label><input id="email" name="email" type="email" required /></div>
+        <div><label for="message">Message</label><textarea id="message" name="message" required></textarea></div>
+        <input type="hidden" name="_subject" value="Demande de rendez-vous - Salon Sylvia">
+        <input type="hidden" name="_redirect" value="https://squallbiker69-hash.github.io/salon-sylvia/merci.html">
         <button class="submit" type="submit">Envoyer</button>
-        <p id="formStatus"></p>
       </form>
     </div>
   </section>
@@ -188,25 +228,7 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Contact form (mailto)
-    const form = document.getElementById('contactForm');
-    const statusEl = document.getElementById('formStatus');
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const message = document.getElementById('message').value.trim();
-      const sujet = encodeURIComponent('Demande de rendez-vous - Salon Sylvia');
-      const corps = encodeURIComponent(`Nom: ${name}\nEmail: ${email}\nMessage: ${message}`);
-      window.location.href = `mailto:guiledu13@hotmail.com?subject=${sujet}&body=${corps}`;
-      statusEl.textContent = "Votre application e-mail vient de s’ouvrir. Si rien ne s’ouvre, écrivez directement à guiledu13@hotmail.com ou contactez-nous sur WhatsApp.";
-      form.reset();
-    });
-
-    // Avis form (démo local)
     const avisForm = document.getElementById('avisForm');
-    const avisStatus = document.getElementById('avisStatus');
     const avisList = document.getElementById('avisList');
     avisForm.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -217,7 +239,6 @@
       item.style.cssText = 'background:#fff;padding:12px;border-radius:8px;box-shadow:var(--shadow);margin-top:10px;';
       item.innerHTML = `<strong>${nom}</strong> — ${'★'.repeat(note)}${'☆'.repeat(5-note)}<br>${msg}`;
       avisList.prepend(item);
-      avisStatus.textContent = "Merci pour votre avis ! (démo)";
       avisForm.reset();
     });
   </script>
