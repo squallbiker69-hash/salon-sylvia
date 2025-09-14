@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Salon Sylvia — Coiffure Moderne</title>
+  <meta name="description" content="Salon Sylvia – salon de coiffure moderne à Méounes-lès-Montrieux (Var). Coupes, colorations, balayages, soins. Prenez rendez-vous !" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #fffafc;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --brand: #ec4899;
+      --brand-strong: #db2777;
+      --shadow: 0 10px 30px -10px rgba(0,0,0,.15);
+      --radius: 16px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1100px, 92%); margin-inline: auto; }
+
+    header { position: sticky; top: 0; z-index: 50; background: #fff; box-shadow: var(--shadow); }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
+    .logo { font-weight: 700; font-size: 20px; color: var(--brand); }
+    nav ul { list-style: none; display: flex; gap: 18px; padding: 0; margin: 0; }
+    nav a { color: var(--muted); font-weight: 500; }
+    nav a:hover { color: var(--brand-strong); }
+    .cta { padding: 10px 16px; border-radius: 999px; font-weight: 600; background: var(--brand); color: #fff; box-shadow: var(--shadow); }
+    .cta:hover { background: var(--brand-strong); }
+
+    .hero { padding: 96px 0 64px; text-align: center; background: linear-gradient(135deg, #fff, #fde2e9); }
+    .hero h1 { font-size: clamp(28px, 5vw, 52px); line-height: 1.1; margin: 0 0 16px; color: var(--brand-strong); }
+    .hero p.lead { color: var(--muted); font-size: clamp(16px, 2.4vw, 20px); margin: 0 auto 28px; max-width: 65ch; }
+
+    .features { padding: 56px 0; background: #fff; }
+    .grid { display: grid; gap: 18px; grid-template-columns: repeat(12, 1fr); }
+    .col { grid-column: span 12; }
+    @media (min-width: 720px) { .col-4 { grid-column: span 4; } .col-6 { grid-column: span 6; } }
+    .card { background: #fff; border: 1px solid #f3f4f6; border-radius: var(--radius); padding: 22px; box-shadow: var(--shadow); }
+    .card h3 { margin: 6px 0 8px; font-size: 20px; color: var(--brand-strong); }
+
+    .hours { padding: 56px 0; background: #fff; }
+    table { width:100%; border-collapse: collapse; }
+    th,td { padding: 8px 12px; border-bottom: 1px solid #f3f4f6; text-align:left; }
+
+    .contact { padding: 56px 0 88px; background: #fff; }
+    form { display: grid; gap: 14px; }
+    label { font-weight: 600; font-size: 14px; }
+    input, textarea, select { width: 100%; padding: 12px 14px; border: 1px solid #e5e7eb; border-radius: 12px; outline: none; }
+    input:focus, textarea:focus, select:focus { border-color: var(--brand); box-shadow: 0 0 0 3px rgba(236,72,153,.25); }
+    .submit { cursor: pointer; border: none; background: var(--brand); color: #fff; border-radius: 999px; font-weight: 600; padding: 12px; }
+    .submit:hover { background: var(--brand-strong); }
+
+    footer { border-top: 1px solid #f3f4f6; padding: 28px 0; color: var(--muted); font-size: 14px; text-align: center; background: #fff; }
+
+    /* Bouton Appeler fixe (mobile) */
+    .call-button {
+      position: fixed; bottom: 16px; right: 16px;
+      background: var(--brand); color: #fff; padding: 14px 20px;
+      border-radius: 999px; font-weight: 600; box-shadow: var(--shadow);
+      z-index: 999; display: none;
+    }
+    @media (max-width: 720px) { .call-button { display: inline-block; } }
+    .call-button:hover { background: var(--brand-strong); }
+
+    /* Avis */
+    #avisList .avis-item { background:#fff; border:1px solid #f3f4f6; border-radius: 12px; padding: 14px; box-shadow: var(--shadow); margin-top:12px; }
+    #avisList .avis-item strong { color: var(--brand-strong); }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <a class="logo" href="#">Salon Sylvia</a>
+      <nav>
+        <ul>
+          <li><a href="#features">Services</a></li>
+          <li><a href="#tarifs">Tarifs</a></li>
+          <li><a href="#avis">Avis</a></li>
+          <li><a href="#horaires">Horaires</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#contact" class="cta">Prendre rendez-vous</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>Bienvenue chez Salon Sylvia</h1>
+      <p class="lead">Un salon de coiffure moderne et élégant à Méounes-lès-Montrieux. Coupes, colorations, balayages et soins adaptés à vos envies.</p>
+      <a class="cta" href="#contact">Réserver maintenant</a>
+    </div>
+  </section>
+
+  <!-- Services (features) -->
+  <section class="features" id="features">
+    <div class="container grid">
+      <article class="card col col-4">
+        <h3>Coupes & Coiffages</h3>
+        <p>Des coupes tendance pour femmes, hommes et enfants, adaptées à chaque style.</p>
+      </article>
+      <article class="card col col-4">
+        <h3>Colorations</h3>
+        <p>Techniques modernes de coloration, mèches et ombrés pour sublimer vos cheveux.</p>
+      </article>
+      <article class="card col col-4">
+        <h3>Soins capillaires</h3>
+        <p>Rituels nourrissants et réparateurs pour des cheveux brillants et en santé.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Tarifs -->
+  <section class="features" id="tarifs">
+    <div class="container">
+      <h2>Tarifs</h2>
+
+      <h3>Enfants</h3>
+      <table>
+        <tbody>
+          <tr><td>Garçon (−15 ans)</td><td>10€</td></tr>
+          <tr><td>Fille (−12 ans)</td><td>15€</td></tr>
+          <tr><td>Bébé (−5 ans)</td><td>8€</td></tr>
+        </tbody>
+      </table>
+
+      <h3 style="margin-top:18px">Homme</h3>
+      <table>
+        <tbody>
+          <tr><td>Shampoing + Coupe + Coiffage</td><td>16€</td></tr>
+        </tbody>
+      </table>
+
+      <h3 style="margin-top:18px">Femme</h3>
+      <table>
+        <tbody>
+          <tr><td>Shampoing + Brushing</td><td>20€</td></tr>
+          <tr><td>Shampoing + Coupe + Brushing</td><td>30€</td></tr>
+          <tr><td>Couleur + Shampoing + Brushing</td><td>38€</td></tr>
+          <tr><td>Couleur + Shampoing + Coupe + Brushing</td><td>48€</td></tr>
+          <tr><td>Balayage / Mèches / Ombré + Shampoing + Brushing — court</td><td>50€</td></tr>
+          <tr><td>Balayage / Mèches / Ombré + Shampoing + Brushing — mi‑long</td><td>60€</td></tr>
+          <tr><td>Balayage / Mèches / Ombré + Shampoing + Brushing — long</td><td>80€</td></tr>
+          <tr><td>Supplément cheveux épais</td><td>+5€ à +10€</td></tr>
+          <tr><td>Permanente + Shampoing + Coupe + Brushing</td><td>40€ à 60€</td></tr>
+          <tr><td>Patine</td><td>15€ <span style="color:var(--muted)">(supplément produit 5€ à 10€)</span></td></tr>
+          <tr><td>Soin</td><td>3€</td></tr>
+        </tbody>
+      </table>
+
+      <div style="margin-top:16px; text-align:center;">
+        <a class="cta" href="tel:+33660482253">📞 Réserver maintenant</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Avis -->
+  <section class="features" id="avis">
+    <div class="container">
+      <h2>Laissez votre avis</h2>
+      <p style="color:var(--muted);">Votre retour est précieux pour améliorer notre salon. Partagez votre expérience !</p>
+      <form id="avisForm" style="display:grid; gap:14px; max-width:500px;">
+        <div>
+          <label for="avisNom">Nom</label>
+          <input id="avisNom" name="avisNom" placeholder="Votre nom" required />
+        </div>
+        <div>
+          <label for="avisMessage">Message</label>
+          <textarea id="avisMessage" name="avisMessage" placeholder="Votre avis..." required></textarea>
+        </div>
+        <div>
+          <label for="avisNote">Note (1 à 5)</label>
+          <select id="avisNote" name="avisNote" required>
+            <option value="">Choisir</option>
+            <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+          </select>
+        </div>
+        <button class="submit" type="submit">Envoyer mon avis</button>
+        <p id="avisStatus" style="margin:8px 0 0; color:var(--muted);"></p>
+      </form>
+      <div id="avisList" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <!-- Horaires -->
+  <section class="hours" id="horaires">
+    <div class="container">
+      <h2>Horaires</h2>
+      <table>
+        <tbody>
+          <tr><td>Lundi</td><td>09h00 – 18h00</td></tr>
+          <tr><td>Mardi</td><td>09h00 – 18h00</td></tr>
+          <tr><td>Mercredi</td><td>09h00 – 14h00</td></tr>
+          <tr><td>Jeudi</td><td>09h00 – 18h00</td></tr>
+          <tr><td>Vendredi</td><td>09h00 – 18h00</td></tr>
+          <tr><td>Samedi</td><td>09h00 – 17h00</td></tr>
+          <tr><td>Dimanche</td><td>Fermé</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2>Contact & Rendez-vous</h2>
+      <p><strong>Adresse :</strong> 2996 Quartier Planesselve, 83136 Méounes-lès-Montrieux</p>
+      <p><strong>Téléphone :</strong> <a href="tel:+33660482253">06 60 48 22 53</a></p>
+      <p><strong>Email :</strong> <a href="mailto:guiledu13@hotmail.com">guiledu13@hotmail.com</a></p>
+      <p><strong>WhatsApp :</strong> <a href="https://wa.me/33660482253" target="_blank">Discuter sur WhatsApp</a></p>
+      <div style="margin-top:16px; border-radius:12px; overflow:hidden; box-shadow: var(--shadow);">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22114.86374517276!2d5.969837134765651!3d43.28750809999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12c9147d97be8f41%3A0xbca575ceb126c5f1!2s2996%20Planesselve%2C%2083136%20M%C3%A9ounes-l%C3%A8s-Montrieux!5e1!3m2!1sfr!2sfr!4v1757846797725!5m2!1sfr!2sfr"
+                width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <p style="margin-top:8px; color:var(--muted); font-size:14px;">
+        Si la carte ne s’affiche pas, <a href="https://www.google.com/maps/place/2996+Planesselve,+83136+M%C3%A9ounes-l%C3%A8s-Montrieux" target="_blank">ouvrez l’itinéraire sur Google Maps</a>.
+      </p>
+
+      <form id="contactForm" style="margin-top:18px;">
+        <div>
+          <label for="name">Nom</label>
+          <input id="name" name="name" placeholder="Votre nom" required />
+        </div>
+        <div>
+          <label for="email2">Email</label>
+          <input id="email2" name="email" type="email" placeholder="vous@exemple.com" required />
+        </div>
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Votre demande..." required></textarea>
+        </div>
+        <button class="submit" type="submit">Envoyer</button>
+        <p id="formStatus" style="margin:8px 0 0;"></p>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">© <span id="year"></span> Salon Sylvia — Tous droits réservés.</div>
+  </footer>
+
+  <!-- Bouton Appeler (mobile) -->
+  <a href="tel:+33660482253" class="call-button">📞 Appeler</a>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Formulaire contact (démo)
+    const contactForm = document.getElementById('contactForm');
+    const statusEl = document.getElementById('formStatus');
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      statusEl.textContent = 'Message envoyé ! (démo)';
+      contactForm.reset();
+    });
+
+    // Formulaire avis (démo, affichage local)
+    const avisForm = document.getElementById('avisForm');
+    const avisStatus = document.getElementById('avisStatus');
+    const avisList = document.getElementById('avisList');
+    avisForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const nom = document.getElementById('avisNom').value.trim();
+      const msg = document.getElementById('avisMessage').value.trim();
+      const note = document.getElementById('avisNote').value;
+      if (!nom || !msg || !note) {
+        avisStatus.textContent = 'Merci de compléter tous les champs.';
+        return;
+      }
+      const item = document.createElement('div');
+      item.className = 'avis-item';
+      item.innerHTML = `<strong>${nom}</strong> — ⭐ ${'★'.repeat(parseInt(note))}${'☆'.repeat(5-parseInt(note))}<br>${msg}`;
+      avisList.prepend(item);
+      avisStatus.textContent = 'Merci pour votre avis ! (démo)';
+      avisForm.reset();
+    });
+  </script>
+</body>
+</html>
