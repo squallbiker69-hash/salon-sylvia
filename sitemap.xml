@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Page d'accueil -->
+  <url>
+    <loc>https://salon-sylvia-83.fr/</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Version avec www -->
+  <url>
+    <loc>https://www.salon-sylvia-83.fr/</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Section fonctionnalités -->
+  <url>
+    <loc>https://salon-sylvia-83.fr/#features</loc>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>
