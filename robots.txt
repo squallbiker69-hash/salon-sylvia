@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://salon-sylvia-83.fr/sitemap.xml
